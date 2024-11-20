@@ -1,0 +1,206 @@
+{
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnType": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "aws.resources.enabledResources": ["AWS::Route53::HostedZone"],
+  "aws.suppressPrompts": {
+    "fileViewerEdit": true,
+    "regionAddAutomatically": true
+  },
+  "bootstrapIntelliSense.version": "Bootstrap v5.3",
+  "cloudcode.project": "vash-esports",
+  "editor.accessibilitySupport": "off",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, Geist Mono, Jetbrains Mono, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 13,
+  "editor.fontWeight": "bold",
+  "editor.hover.enabled": false,
+  "editor.inlineSuggest.enabled": true,
+  "editor.rulers": [80, 120],
+  "editor.suggestSelection": "first",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "css": false,
+    "java": true,
+    "javascript": true,
+    "yaml": true
+  },
+  "githubPullRequests.fileListLayout": "tree",
+  "githubPullRequests.pullBranch": "never",
+  "java.home": "/Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home",
+  "java.jdt.ls.java.home": "c:\\Program Files\\Java\\jdk-17",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "lldb.launch.expressions": "native",
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "notebook.formatOnSave.enabled": true,
+  "powermode.enabled": true,
+  "python.formatting.provider": "none",
+  "python.pythonPath": "/usr/local/bin/python3",
+  "react-native-tools.showUserTips": false,
+  "redhat.telemetry.enabled": true,
+  "remote.SSH.remotePlatform": {
+    "192.168.50.65": "linux",
+    "192.168.50.7": "linux",
+    "stan-server": "linux",
+    "stan-server-h5mag": "linux"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "svelte.enable-ts-plugin": true,
+  "terminal.external.osxExec": "Warp.app",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.integrated.fontFamily": "monospace",
+  "typescript.tsserver.log": "verbose",
+  "vscode-edge-devtools.mirrorEdits": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.startupEditor": "none",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "git.openRepositoryInParentFolders": "always",
+  "editor.renderWhitespace": "none",
+  "git.ignoreRebaseWarning": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "cloudcode.duetAI.project": "vash-software",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "files.autoSaveDelay": 100,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.renderSideBySide": false,
+  "workspaceExplorer.workspaceStorageDirectory": "/home/stan",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "files.autoSave": "afterDelay",
+  "workbench.iconTheme": "vscode-icons",
+  "vsicons.dontShowNewVersionMessage": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.stickyScroll.enabled": false,
+  "editor.guides.bracketPairs": true,
+  "workbench.editor.enablePreview": false,
+  "jupyter.askForKernelRestart": false,
+  "terminal.integrated.inheritEnv": false,
+  "go.toolsManagement.autoUpdate": true,
+  "workspaceSidebar.rootFolders": [
+    {
+      "path": "~",
+      "excludeHiddenFolders": false,
+      "depth": 2
+    }
+  ],
+  "terminal.integrated.experimentalInlineChat": true,
+  "cmake.configureOnOpen": true,
+  "explorer.confirmPasteNative": false,
+  "qiskit-vscode.config.firstRun": false,
+  "qiskit-vscode.ibmq.token": null,
+  "qiskit-vscode.ibmq.hub": "",
+  "qiskit-vscode.ibmq.url": "",
+  "qiskit-vscode.ibmq.group": "",
+  "qiskit-vscode.ibmq.project": "",
+  "cmake.showOptionsMovedNotification": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "amazonQ.suppressPrompts": {
+    "codeWhispererConnectionExpired": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "prisma.showPrismaDataPlatformNotification": false,
+  "update.showReleaseNotes": false,
+  "parallels-desktop.extension.path": "/Users/stanrunge/.parallels-desktop-vscode",
+  "parallels-desktop.prlctl.path": "/usr/local/bin/prlctl",
+  "parallels-desktop.brew.path": "/opt/homebrew/bin/brew",
+  "parallels-desktop.git.path": "/usr/bin/git",
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "docker-desktop"
+  ],
+  "vs-kubernetes": {
+    "vscode-kubernetes.kubectl-path-mac": "/Users/stanrunge/.vs-kubernetes/tools/kubectl/kubectl",
+    "vscode-kubernetes.helm-path-mac": "/Users/stanrunge/.vs-kubernetes/tools/helm/darwin-arm64/helm",
+    "vscode-kubernetes.minikube-path-mac": "/Users/stanrunge/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
+  },
+  "githubIssues.queries": [
+    {
+      "label": "My Issues",
+      "query": "is:open assignee:${user} repo:${owner}/${repository}",
+      "groupBy": ["milestone"]
+    },
+    {
+      "label": "Created Issues",
+      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+    },
+    {
+      "label": "Recent Issues",
+      "query": "state:open repo:${owner}/${repository} sort:updated-desc"
+    }
+  ],
+  "gitlens.ai.experimental.model": "openai:gpt-4o",
+  "terminal.integrated.enableImages": true,
+  "window.restoreFullscreen": true,
+  "workbench.editor.showTabs": "none",
+  "dart.flutterSdkPath": "/Users/stanrunge/Development/flutter",
+  "makefile.configureOnOpen": true,
+  "vim.easymotion": true,
+  "lldb.suppressUpdateNotifications": true,
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "editor.lineNumbers": "relative",
+  "zenMode.fullScreen": false,
+  "githubPullRequests.remotes": ["origin", "upstream", "github"],
+  "workbench.sideBar.location": "right",
+  "files.associations": {
+    "*.svelte": "svelte"
+  },
+  "workbench.editor.labelFormat": "short"
+}
