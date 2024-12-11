@@ -5,17 +5,8 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"  # You can change this to another minimal theme if you prefer.
 DEFAULT_USER="$USER"
 
-# Disable auto-update checks to speed up shell initialization.
-DISABLE_AUTO_UPDATE="true"
-DISABLE_UPDATE_PROMPT="true"
-
 # Enable case-insensitive completion.
 CASE_SENSITIVE="false"
-
-# Optimize compinit to speed up shell startup.
-ZSH_COMPDUMP="${ZDOTDIR:-$HOME}/.zcompdump-${ZSH_VERSION}"
-autoload -U compinit
-compinit -C
 
 # Load only essential plugins to reduce load time.
 plugins=(
@@ -57,6 +48,13 @@ alias ...='cd ../..'
 alias c='clear'
 alias h='history'
 alias mkdir='mkdir -pv'
+alias lg='lazygit'
+
+alias ve='~/dev/dotfiles/tmux/vash-esports.sh'
+alias rdb='sail artisan migrate:fresh; sail artisan db:seed'
+alias stikstof='cd ~/dev/stikstofvrij-bouwen'
+alias mko='cd ~/dev/distributor'
+alias pw='cd ~/dev/personal-website'
 
 # Enable aliases to be sudo'ed.
 alias sudo='sudo '
