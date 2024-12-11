@@ -53,7 +53,7 @@ alias lg='lazygit'
 alias ve='~/dev/dotfiles/tmux/vash-esports.sh'
 alias rdb='sail artisan migrate:fresh; sail artisan db:seed'
 alias stikstof='cd ~/dev/stikstofvrij-bouwen'
-alias mko='cd ~/dev/distributor'
+alias mko='~/dev/dotfiles/tmux/distributor.sh'
 alias pw='cd ~/dev/personal-website'
 
 # Enable aliases to be sudo'ed.
