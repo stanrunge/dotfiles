@@ -10,8 +10,15 @@ if [ $? != 0 ]; then
 	tmux new-window -t $SESSION_NAME:1 -c ~/dev/vash-esports/packages/web
 	tmux send-keys -t $SESSION_NAME:1 "sail up -d; sail bun run dev" C-m
 
+	while ! (
+		cd ~/dev/vash-esports/packages/web
+		./vendor/bin/sail ps | grep -q 'starting'
+	); do
+		sleep 1
+	done
+
 	tmux new-window -t $SESSION_NAME:2 -c ~/dev/vash-esports/packages/web
-	tmux send-keys -t $SESSION_NAME:2 "sail up -d; sail artisan queue:work" C-m
+	tmux send-keys -t $SESSION_NAME:2 "sail artisan queue:work" C-m
 
 	tmux new-window -t $SESSION_NAME:3 -c ~/dev/vash-esports/packages/web
 fi
