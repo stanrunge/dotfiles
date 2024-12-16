@@ -21,8 +21,12 @@ if [ $? != 0 ]; then
 	tmux send-keys -t $SESSION_NAME:2 "sail artisan queue:work" C-m
 
 	tmux new-window -t $SESSION_NAME:3 -c ~/dev/vash-esports/packages/web
+
+	tmux select-window -t $SESSION_NAME:0
 fi
 
-tmux select-window -t $SESSION_NAME:0
-
-tmux attach -t $SESSION_NAME
+if [ -n "$TMUX" ]; then
+	tmux switch-client -t $SESSION_NAME
+else
+	tmux attach -t $SESSION_NAME
+fi

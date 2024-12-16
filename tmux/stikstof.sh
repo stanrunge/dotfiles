@@ -9,8 +9,12 @@ if [ $? != 0 ]; then
 
 	tmux new-window -t $SESSION_NAME:1 -c ~/dev/stikstofvrij-bouwen
 	tmux send-keys -t $SESSION_NAME:1 "dc up --watch" C-m
+
+	tmux select-window -t $SESSION_NAME:2
 fi
 
-tmux select-window -t $SESSION_NAME:0
-
-tmux attach -t $SESSION_NAME
+if [ -n "$TMUX" ]; then
+	tmux switch-client -t $SESSION_NAME
+else
+	tmux attach -t $SESSION_NAME
+fi
