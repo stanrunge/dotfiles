@@ -26,7 +26,7 @@ if [ $? != 0 ]; then
 	tmux new-window -t $SESSION_NAME:4 -c ~/dev/vash-esports/packages/web
 	tmux send-keys -t $SESSION_NAME:4 "sail artisan pail -v" C-m
 
-	tmux new-window -t $SESSION_NAME:4 -c ~/dev/vash-esports/packages/web
+	tmux new-window -t $SESSION_NAME:5 -c ~/dev/vash-esports/packages/web
 
 	tmux select-window -t $SESSION_NAME:0
 fi
