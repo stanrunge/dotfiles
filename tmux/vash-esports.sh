@@ -18,9 +18,15 @@ if [ $? != 0 ]; then
 	done
 
 	tmux new-window -t $SESSION_NAME:2 -c ~/dev/vash-esports/packages/web
-	tmux send-keys -t $SESSION_NAME:2 "sail artisan queue:work" C-m
+	tmux send-keys -t $SESSION_NAME:2 "sail artisan reverb:start --debug" C-m
 
 	tmux new-window -t $SESSION_NAME:3 -c ~/dev/vash-esports/packages/web
+	tmux send-keys -t $SESSION_NAME:3 "sail artisan queue:work" C-m
+
+	tmux new-window -t $SESSION_NAME:4 -c ~/dev/vash-esports/packages/web
+	tmux send-keys -t $SESSION_NAME:4 "sail artisan pail -v" C-m
+
+	tmux new-window -t $SESSION_NAME:4 -c ~/dev/vash-esports/packages/web
 
 	tmux select-window -t $SESSION_NAME:0
 fi
