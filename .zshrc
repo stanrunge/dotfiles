@@ -54,6 +54,7 @@ alias dc='docker compose'
 
 alias ve='~/dev/dotfiles/tmux/vash-esports.sh'
 alias rdb='sail artisan migrate:fresh; sail artisan db:seed'
+alias vash='sail artisan'
 alias ss='~/dev/dotfiles/tmux/stikstof.sh'
 alias mko='~/dev/dotfiles/tmux/distributor.sh'
 alias pw='cd ~/dev/personal-website'
