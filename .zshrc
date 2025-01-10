@@ -51,13 +51,14 @@ alias h='history'
 alias mkdir='mkdir -pv'
 alias lg='lazygit'
 alias dc='docker compose'
+alias tks='tmux kill-session'
 
 alias ve='~/dev/dotfiles/tmux/vash-esports.sh'
 alias rdb='sail artisan migrate:fresh; sail artisan db:seed'
 alias vash='sail artisan'
 alias ss='~/dev/dotfiles/tmux/stikstof.sh'
 alias mko='~/dev/dotfiles/tmux/distributor.sh'
-alias pw='cd ~/dev/personal-website'
+alias pw='~/dev/dotfiles/tmux/personal-website.sh'
 
 # Enable aliases to be sudo'ed.
 alias sudo='sudo '
@@ -97,6 +98,8 @@ fi
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
   source "$HOME/google-cloud-sdk/completion.zsh.inc"
 fi
+
+export AWS_REGION=eu-west-1
 
 # Functions for productivity.
 
@@ -143,3 +146,6 @@ if [ -f "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
