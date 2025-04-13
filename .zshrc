@@ -26,6 +26,8 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 # Add other paths (e.g., Node.js, Python, etc.).
 export PATH="$HOME/.local/bin:$PATH"
 
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+
 # Set default editor.
 export EDITOR='nvim'  # Change to your preferred editor.
 
@@ -52,6 +54,7 @@ alias mkdir='mkdir -pv'
 alias lg='lazygit'
 alias dc='docker compose'
 alias tks='tmux kill-session'
+alias grip='grep -i'
 
 alias ve='~/dev/dotfiles/tmux/vash-esports.sh'
 alias rdb='sail artisan migrate:fresh; sail artisan db:seed'
@@ -59,6 +62,7 @@ alias vash='sail artisan'
 alias ss='~/dev/dotfiles/tmux/stikstof.sh'
 alias mko='~/dev/dotfiles/tmux/distributor.sh'
 alias pw='~/dev/dotfiles/tmux/personal-website.sh'
+alias hai='~/dev/dotfiles/tmux/hair-ai.sh'
 
 # Enable aliases to be sudo'ed.
 alias sudo='sudo '
@@ -149,3 +153,6 @@ alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# bun completions
+[ -s "/Users/stanrunge/.bun/_bun" ] && source "/Users/stanrunge/.bun/_bun"
