@@ -1,0 +1,35 @@
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+
+font-size = 16
+font-family = "JetBrainsMonoNL NFM Regular"
+font-synthetic-style = "false"
+
+cursor-style = "block"
+
+mouse-hide-while-typing = "true"
+
+window-save-state = "always"
+window-height = 57
+window-width = 100
+
+clipboard-read = "allow"
+clipboard-write = "allow"
+clipboard-paste-protection = "false"
+copy-on-select = "clipboard"
+
+shell-integration = "zsh"
+
+app-notifications = "no-clipboard-copy"
+
+macos-non-native-fullscreen = "true"
+macos-window-buttons = "hidden"
+macos-titlebar-style = "hidden"
+
+auto-update = "download"
+
+# quick-terminal-screen = "main"
+# quick-terminal-size = "100%"
+# quick-terminal-animation-duration = 0
+
+# keybind = global:cmd+escape=toggle_quick_terminal
