@@ -8,12 +8,15 @@ DEFAULT_USER="$USER"
 # Enable case-insensitive completion.
 CASE_SENSITIVE="false"
 
+
+
 # Load only essential plugins to reduce load time.
 plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
+
 
 # Source Oh My Zsh.
 source $ZSH/oh-my-zsh.sh
@@ -156,3 +159,24 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # bun completions
 [ -s "/Users/stanrunge/.bun/_bun" ] && source "/Users/stanrunge/.bun/_bun"
+
+fpath=(/Users/stan/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+
+prettyread() {
+  local term_width
+  term_width = $(tput cols)
+
+  local text_width = 80
+
+  local left_margin = $(( (term_width - text_width) / 2 ))
+
+  col -bx | fmt -w "$text_width" | sed "s/^/$(printf '%*s' "$left_margin")/" | less
+}
+
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH="/Users/stan/.antigravity/antigravity/bin:$PATH"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
