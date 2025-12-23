@@ -8,8 +8,6 @@ DEFAULT_USER="$USER"
 # Enable case-insensitive completion.
 CASE_SENSITIVE="false"
 
-
-
 # Load only essential plugins to reduce load time.
 plugins=(
   git
@@ -21,15 +19,20 @@ plugins=(
 # Source Oh My Zsh.
 source $ZSH/oh-my-zsh.sh
 
-# User configuration.
-
-# Set up your PATH environment variable.
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
-
-# Add other paths (e.g., Node.js, Python, etc.).
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/Applications/Docker.app/Contents/Resources/bin/:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+if [ -s "$HOME/.bun/bin/bun" ]; then
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+if [ -s "$HOME/.deno/bin/deno" ]; then
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
 
-export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
 # Set default editor.
 export EDITOR='nvim'  # Change to your preferred editor.
@@ -72,26 +75,7 @@ alias sudo='sudo '
 
 # NVM (Node Version Manager) with lazy loading.
 export NVM_DIR="$HOME/.nvm"
-export NVM_LAZY_LOAD=true
-if [[ $NVM_LAZY_LOAD == true ]]; then
-  nvm() {
-    unset -f nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    nvm "$@"
-  }
-fi
-
-# Load Bun if installed.
-if [ -s "$HOME/.bun/bin/bun" ]; then
-  export BUN_INSTALL="$HOME/.bun"
-  export PATH="$BUN_INSTALL/bin:$PATH"
-fi
-
-# Load Deno if installed.
-if [ -s "$HOME/.deno/bin/deno" ]; then
-  export DENO_INSTALL="$HOME/.deno"
-  export PATH="$DENO_INSTALL/bin:$PATH"
-fi
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Load kubectl completions on demand.
 if command -v kubectl &>/dev/null; then
@@ -177,7 +161,6 @@ prettyread() {
 
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export PATH="/Users/stan/.antigravity/antigravity/bin:$PATH"
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
