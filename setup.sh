@@ -1,8 +1,7 @@
-DOTFILES_PATH="$HOME/dev/dotfiles"
+DOTFILES_PATH="$HOME/dev/stan/dotfiles"
 
 ZSH_SOURCE="$DOTFILES_PATH/zsh/.zshrc"
-TMUX_CONFIG_SOURCE="$DOTFILES_PATH/.tmux.conf"
-TMUX_FOLDER_SOURCE="$DOTFILES_PATH/.tmux"
+TMUX_SOURCE="$DOTFILES_PATH/tmux"
 NVIM_SOURCE="$DOTFILES_PATH/nvim"
 GHOSTTY_SOURCE="$DOTFILES_PATH/ghostty"
 GIT_SOURCE="$DOTFILES_PATH/git/.gitconfig"
@@ -26,10 +25,12 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/ghostty
 
 ln -s $ZSH_SOURCE $ZSH_CONFIG
-ln -s $TMUX_CONFIG_SOURCE $TMUX_CONFIG
-ln -s $TMUX_FOLDER_SOURCE $TMUX_FOLDER
+ln -s $TMUX_SOURCE/.tmux.conf $TMUX_CONFIG
+ln -s $TMUX_SOURCE/.tmux $TMUX_FOLDER
 ln -s $NVIM_SOURCE/* $NVIM_CONFIG/
 ln -s $GHOSTTY_SOURCE/* $GHOSTTY_CONFIG/
 ln -s $GIT_SOURCE $GIT_CONFIG
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Setup complete! Please run 'source ~/.zshrc'"
