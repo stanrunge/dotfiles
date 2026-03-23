@@ -1,13 +1,16 @@
 # Run `ghostty +show-config --default --docs` to view a list of
 # all available config options and their default values.
 
-font-size = 16
+theme=light:Atom One Light,dark:Atom One Dark
+
+font-size = 13
 font-family = "JetBrainsMonoNL NFM Regular"
 font-synthetic-style = "false"
 
 cursor-style = "block"
 
 mouse-hide-while-typing = "true"
+mouse-scroll-multiplier = 1
 
 window-save-state = "always"
 window-height = 57
