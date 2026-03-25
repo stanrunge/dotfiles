@@ -169,19 +169,43 @@ dumpdir() {
     files="${filtered%$'\n'}"
   fi
 
+  # Build output with tree overview + file contents
   local output
-  output=$(echo "$files" | sort | while IFS= read -r f; do
+  local file_count=0
+  local abs_dir=$(cd "$dir" && pwd)
+
+  output="<directory path=\"$abs_dir\">"$'\n'
+
+  # Tree overview for structure context
+  output+=$'\n'"<tree>"$'\n'
+  output+=$(echo "$files" | sort | while IFS= read -r f; do
     [ -z "$f" ] && continue
     local filepath="$dir/$f"
     [ -f "$filepath" ] || continue
-    echo "------ $filepath ------"
-    cat "$filepath" 2>/dev/null
-    echo ""
+    echo "$f"
   done)
+  output+=$'\n'"</tree>"$'\n'
+
+  # File contents with xml delimiters
+  while IFS= read -r f; do
+    [ -z "$f" ] && continue
+    local filepath="$dir/$f"
+    [ -f "$filepath" ] || continue
+    # Skip binary files
+    if file "$filepath" | grep -qE 'binary|executable|image|font|archive|compressed'; then
+      continue
+    fi
+    output+=$'\n'"<file path=\"$f\">"$'\n'
+    output+=$(cat "$filepath" 2>/dev/null)
+    output+=$'\n'"</file>"$'\n'
+    ((file_count++))
+  done <<< "$(echo "$files" | sort)"
+
+  output+=$'\n'"</directory>"
 
   local line_count=$(echo "$output" | wc -l)
   echo "$output" | clip
-  echo "Copied $line_count lines from $dir to clipboard"
+  echo "Copied $file_count files ($line_count lines) from $abs_dir to clipboard"
 }
 
 # Extract function to handle various archive types.
