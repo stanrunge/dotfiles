@@ -70,9 +70,10 @@ elif command -v clip.exe &>/dev/null; then
 fi
 
 # Aliases
-alias ll='ls -lah'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='eza -lah --group-directories-first --sort=name --icons'
+alias la='eza -a --group-directories-first'
+alias l='eza --group-directories-first'
+alias lt='eza -lah --tree --level=2 --icons'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias c='clear'
