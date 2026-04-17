@@ -55,6 +55,9 @@ export AWS_REGION=eu-west-1
 if command -v pbcopy &>/dev/null; then
   alias clip='pbcopy'
   alias clippaste='pbpaste'
+elif [[ -n "$WSL_DISTRO_NAME" ]] && command -v clip.exe &>/dev/null; then
+  alias clip='clip.exe'
+  alias clippaste='powershell.exe -c Get-Clipboard'
 elif command -v wl-copy &>/dev/null; then
   alias clip='wl-copy'
   alias clippaste='wl-paste'
