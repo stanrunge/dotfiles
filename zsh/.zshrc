@@ -91,6 +91,8 @@ alias lg='lazygit'
 alias dc='docker compose'
 alias tks='tmux kill-session'
 
+alias dl-music='yt-dlp -x --embed-thumbnail --embed-metadata --parse-metadata "%(title)s:%(meta_title)s" -o "%(artist)s - %(title)s.%(ext)s"'
+
 DOTFILES_TMUX="$HOME/dev/stan/dotfiles/tmux/.tmux"
 alias ve="$DOTFILES_TMUX/vash-esports.sh"
 alias pw="$DOTFILES_TMUX/personal-website.sh"
