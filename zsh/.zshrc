@@ -248,3 +248,6 @@ mkcd() {
 
 #   col -bx | fmt -w "$text_width" | sed "s/^/$(printf '%*s' "$left_margin")/" | less
 # }
+
+# bun completions
+[ -s "/home/stan/.bun/_bun" ] && source "/home/stan/.bun/_bun"
