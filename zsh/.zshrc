@@ -195,7 +195,7 @@ dumpdir() {
     local filepath="$dir/$f"
     [ -f "$filepath" ] || continue
     # Skip binary files
-    if file "$filepath" | grep -qE 'binary|executable|image|font|archive|compressed'; then
+    if file --mime-encoding "$filepath" | grep -qv 'utf-8\|ascii\|us-ascii\|iso-8859'; then
       continue
     fi
     output+=$'\n'"<file path=\"$f\">"$'\n'
