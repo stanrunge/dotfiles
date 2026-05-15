@@ -26,6 +26,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/.bun/bin:$PATH"
+export PATH="/usr/local/bin/tailscale:$PATH"
 if [ -s "$HOME/.deno/bin/deno" ]; then
   export DENO_INSTALL="$HOME/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
@@ -96,6 +97,8 @@ alias tks='tmux kill-session'
 
 alias dl-music='yt-dlp -x --embed-thumbnail --embed-metadata --parse-metadata "%(title)s:%(meta_title)s" -o "%(artist)s - %(title)s.%(ext)s"'
 
+alias nv='nvim'
+
 DOTFILES_TMUX="$HOME/dev/stan/dotfiles/tmux/.tmux"
 alias ve="$DOTFILES_TMUX/vash-esports.sh"
 alias pw="$DOTFILES_TMUX/personal-website.sh"
@@ -140,20 +143,21 @@ fi
 # Enable aliases to be sudo'ed.
 alias sudo='sudo '
 
-
 # Copy the contents of all files in a directory to clipboard
-# Usage: dumpdir                (current dir)
-#        dumpdir ./src          (specific dir)
-#        dumpdir . ts,lua       (only .ts and .lua files)
+# Usage: dumpdir                                          (current dir)
+#        dumpdir ./src                                    (specific dir)
+#        dumpdir . ts,lua                                 (only .ts and .lua files)
+#        dumpdir . "" assets/js/qrcode.min.js,*.lock      (exclude by relative path; glob supported)
 dumpdir() {
   local dir="${1:-.}"
   local extensions="${2:-}"
+  local excludes="${3:-}"
 
   local files
   if git -C "$dir" rev-parse --is-inside-work-tree &>/dev/null; then
     files=$(git -C "$dir" ls-files --cached --others --exclude-standard)
   else
-    files=$(find "$dir" -type f -not -path '*/.git/*')
+    files=$(cd "$dir" && find . -type f -not -path '*/.git/*' | sed 's|^\./||')
   fi
 
   # Filter by extensions if provided (comma-separated)
@@ -168,6 +172,25 @@ dumpdir() {
           break
         fi
       done
+    done <<< "$files"
+    files="${filtered%$'\n'}"
+  fi
+
+  # Exclude by relative path (glob supported, comma-separated)
+  if [ -n "$excludes" ]; then
+    local filtered=""
+    IFS=',' read -rA excl_arr <<< "$excludes"
+    while IFS= read -r f; do
+      [ -z "$f" ] && continue
+      local skip=false
+      for pattern in "${excl_arr[@]}"; do
+        pattern=$(echo "$pattern" | xargs)
+        if [[ "$f" == ${~pattern} ]]; then
+          skip=true
+          break
+        fi
+      done
+      [ "$skip" = false ] && filtered+="$f"$'\n'
     done <<< "$files"
     files="${filtered%$'\n'}"
   fi
@@ -207,7 +230,7 @@ dumpdir() {
   output+=$'\n'"</directory>"
 
   local line_count=$(echo "$output" | wc -l)
-  echo "$output" | clip
+  printf '%s\n' "$output" | clip
   echo "Copied $file_count files ($line_count lines) from $abs_dir to clipboard"
 }
 
@@ -251,3 +274,4 @@ mkcd() {
 
 # bun completions
 [ -s "/home/stan/.bun/_bun" ] && source "/home/stan/.bun/_bun"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
